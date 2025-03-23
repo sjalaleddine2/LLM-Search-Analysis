@@ -43,3 +43,11 @@ with col1:
     st.metric(label="Original MRR", value=f"{original_mrr:.4f}")
 with col2:
     st.metric(label="Fine-Tuned MRR", value=f"{fine_tuned_mrr:.4f}")
+
+mrr_data = pd.DataFrame({
+    "Model": ["Original", "Fine-Tuned"],
+    "MRR": [original_mrr, fine_tuned_mrr]
+})
+
+fig_mrr = px.bar(mrr_data, x="Model", y="MRR", text="MRR", title="Original vs. Fine-Tuned MRR")
+st.plotly_chart(fig_mrr)

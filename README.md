@@ -14,6 +14,8 @@ This repository contains an AI-based pipeline for evaluating the relevance of se
 - **Baseline MRR:** 0.4020  
 - **Behavior-Weighted MRR:** 0.5046  
 
+![MRR Comparison](assets/results_comparison.png)
+
 The observed 25% improvement highlights the impact of incorporating behavioral signals into the ranking process.
 
 ## Running the Pipeline
