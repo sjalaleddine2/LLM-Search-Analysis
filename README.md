@@ -16,19 +16,6 @@ This repository contains an AI-based pipeline for evaluating the relevance of se
 
 The observed 25% improvement highlights the impact of incorporating behavioral signals into the ranking process.
 
-## Project Structure
-```
-LLM-Search-Analysis/
-├── data/                         # Search log input/output
-├── src/
-│   ├── generate_synthetic_data.py  # Creates example synthetic search logs
-│   ├── evaluate_queries.py         # Scoring and metric evaluation
-│   └── data_pipeline.py            # Preprocessing pipeline
-├── dashboard.py                  # Interactive dashboard
-├── main.py                       # Entry point for the full workflow
-├── README.md                     # Project summary and instructions
-```
-
 ## Running the Pipeline
 
 To generate synthetic data before running the pipeline, execute the synthetic data script:
@@ -86,5 +73,18 @@ Running `main.py` will automatically process this file if placed in the `data/` 
 - Python (Pandas, NumPy)
 - Hugging Face Transformers (TinyBERT)
 - Streamlit & Plotly (for UI/visualization)
+
+## Project Structure
+```
+LLM-Search-Analysis/
+├── data/                         # Search log input/output
+├── src/
+│   ├── generate_synthetic_data.py  # Creates example synthetic search logs
+│   ├── evaluate_queries.py         # Scoring and metric evaluation
+│   └── data_pipeline.py            # Preprocessing pipeline
+├── dashboard.py                  # Interactive dashboard
+├── main.py                       # Entry point for the full workflow
+├── README.md                     # Project summary and instructions
+```
 
 
