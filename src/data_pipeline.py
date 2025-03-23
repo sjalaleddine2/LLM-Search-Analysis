@@ -20,7 +20,7 @@ def preprocess_text(text):
     return ' '.join(tokens)
 
 # Load the search logs into a DataFrame
-df = pd.read_csv("../data/synthetic_search_logs.csv")
+df = pd.read_csv("data/synthetic_search_logs.csv")
 
 # Apply text preprocessing to search queries
 df['query'] = df['query'].apply(preprocess_text)
@@ -30,6 +30,6 @@ df['ctr'] = df['click'] / df.groupby('query')['click'].transform('sum')  # Click
 df['adjusted_relevance'] = df['relevance'] * df['dwell_time']  # Weighted relevance score
 
 # Save the processed dataset
-df.to_csv("../data/processed_search_logs.csv", index=False)
+df.to_csv("data/processed_search_logs.csv", index=False)
 
 print("Data processing complete. Processed dataset saved to data/processed_search_logs.csv.")

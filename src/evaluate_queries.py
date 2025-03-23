@@ -4,7 +4,7 @@ import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 
 # Load processed search logs
-df = pd.read_csv("../data/processed_search_logs.csv")
+df = pd.read_csv("data/processed_search_logs.csv")
 
 # Load the pre-trained model outside the function to avoid reloading every call
 model = pipeline("text-classification", model="cross-encoder/ms-marco-TinyBERT-L-2-v2")
@@ -24,10 +24,6 @@ def mean_reciprocal_rank(df, score_col):
         if first_relevant.size > 0:
             reciprocal_ranks.append(1 / (first_relevant[0] + 1))
     mrr_score = round(sum(reciprocal_ranks) / len(reciprocal_ranks), 4)
-    
-    # Store result in a CSV file
-    with open("../data/evaluation_scores.csv", "a") as f:
-        f.write(f"MRR,{mrr_score:.4f}\n")
     
     return mrr_score
 
@@ -51,7 +47,7 @@ df['fine_tuned_score'] = df['weighted_relevance']
 print(f"Fine-tuned MRR: {mean_reciprocal_rank(df, score_col='weighted_relevance'):.4f}")
 
 # Save results
-df.to_csv("../data/evaluated_search_logs.csv", index=False)
+df.to_csv("data/evaluated_search_logs.csv", index=False)
 
 
 

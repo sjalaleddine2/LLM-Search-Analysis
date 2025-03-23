@@ -3,7 +3,7 @@ import streamlit as st
 import plotly.express as px
 
 # Load evaluated search logs
-df = pd.read_csv("../data/evaluated_search_logs.csv")
+df = pd.read_csv("data/evaluated_search_logs.csv")
 
 st.title("AI-Powered Search Quality Dashboard")
 st.markdown("### Analyze search relevance and ranking performance")
